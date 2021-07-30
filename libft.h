@@ -2,6 +2,7 @@
 #define LIBFT_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void    ft_bzero(void *s, size_t len);
 int ft_isalnum(int c);
