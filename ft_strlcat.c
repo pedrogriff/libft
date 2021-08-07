@@ -15,7 +15,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[len] = src[len - c];
 		len++;
 	}
-	if(c < size)
+	if (c < size)
 		dst[len] = '\0';
 	return (c + ft_strlen(src));
 }

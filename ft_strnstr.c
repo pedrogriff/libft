@@ -3,7 +3,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	int	c;
+	int		c;
 
 	i = 0;
 	while (i < len && big[i] != '\0')

@@ -26,9 +26,7 @@ fclean: clean
 re: fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCFILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJFILES)
 
 .PHONY: all, clean, fclear, re
-
-#https://noahloomans.com/tutorials/makefile/
