@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/16 20:45:24 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/17 16:17:53 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
-	while (s[len] != '\0')
+	while (lst != NULL)
 	{
+		lst = lst -> next;
 		len++;
 	}
 	return (len);

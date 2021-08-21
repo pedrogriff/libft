@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/16 20:59:10 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/17 16:17:14 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	len;
+	t_list	*tmp;
 
-	len = 0;
-	while (s[len] != '\0')
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
 	{
-		len++;
+		*lst = new;
+		return ;
 	}
-	return (len);
+	tmp = ft_lstlast(*lst);
+	tmp -> next = new;
 }

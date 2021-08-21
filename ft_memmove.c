@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/16 14:52:02 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/16 14:52:06 by pde-grif         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -19,5 +31,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	ft_memcpy (d, s, len);
 	return (dst);
 }
-//https://stackoverflow.com/questions/13095488/
-//how-to-implement-overlap-checking-memcpy-in-c

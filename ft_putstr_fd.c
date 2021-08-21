@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/16 14:52:30 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/16 14:52:31 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	len;
-
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
+	write(fd, s, ft_strlen(s));
 }

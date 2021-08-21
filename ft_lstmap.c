@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/17 13:18:02 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/17 16:18:09 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	len;
+	t_list	*new;
 
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
+	if (lst == NULL)
+		return (NULL);
+	new = ft_lstnew(f(lst -> content));
+	if (new == NULL)
+		return (NULL);
+	new -> next = ft_lstmap(lst -> next, f, del);
+	return (new);
 }

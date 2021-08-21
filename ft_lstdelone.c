@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/17 10:55:29 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/17 16:17:24 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	len;
-
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
+	if (lst == NULL)
+		return ;
+	del(lst -> content);
+	free(lst);
 }

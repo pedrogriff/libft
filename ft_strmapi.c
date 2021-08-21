@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/16 14:53:30 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/16 14:53:31 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
+	unsigned int	i;
+	char			*str;
 
-	len = 0;
-	while (s[len] != '\0')
+	i = 0;
+	str = malloc(ft_strlen(s) + 1);
+	if (str == NULL)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		len++;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	return (len);
+	str[i] = '\0';
+	return (str);
 }

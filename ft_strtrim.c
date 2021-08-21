@@ -1,23 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/16 14:53:50 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/16 14:53:51 by pde-grif         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trimmed;
-	size_t	i;
 	size_t	len;
 
-	i = 0;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
 	len = ft_strlen(s1);
-	trimmed = malloc(ft_strlen(s1) + 1);
-	while (s1[i] != '\0')
-	{
-		while (set[i] != s1[i])
-		{
-			trimmed[i] = s1[i];
-			i++;
-		}
-		while (set[i] == s1[i])
-			i++;
-	}
-	return (trimmed);
+	while (len && ft_strchr(set, s1[len]))
+		len--;
+	return (ft_substr(s1, 0, len + 1));
 }

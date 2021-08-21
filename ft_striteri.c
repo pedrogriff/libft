@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-grif <pde-grif@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 14:53:26 by pde-grif          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:27 by pde-grif         ###   ########lyon.fr   */
+/*   Created: 2021/08/16 14:53:05 by pde-grif          #+#    #+#             */
+/*   Updated: 2021/08/16 14:53:06 by pde-grif         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	len;
+	unsigned int	i;
 
-	len = 0;
-	while (s[len] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		len++;
+		f(i, s + i);
+		i++;
 	}
-	return (len);
 }
